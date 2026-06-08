@@ -29,6 +29,12 @@ const Layout = () => {
           {
             token?<button onClick={handleLogout}>logout</button>: <NavLink to={"/login"} className={({isActive})=>isActive?"font-bold ":""}>login</NavLink>  
           }
+
+          {
+            token&& <NavLink to={"/newPost"} className={({isActive})=>isActive?"font-bold ":""}>New Post</NavLink>
+          }
+
+
       </nav>
           
       <Outlet/>

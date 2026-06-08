@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useAuth } from '../context/AuthContext'
 import { getAllPost } from '../utils/post';
 import type { PostType } from '../types/type';
+import { NavLink} from 'react-router'
 
 const Dashboard = () => {
   const {token,setToken}=useAuth();
@@ -38,7 +39,11 @@ if(token){
     <div>
       {  posts && 
       posts.map(p=>(
-        <p>{p.title}</p>
+       <NavLink to={`/posts/${p.id}`}>
+         <p key={p.id}>{p.title}</p>
+        <p>{p.body}</p>
+        <hr />
+       </NavLink>
       ))
       }
     </div>
