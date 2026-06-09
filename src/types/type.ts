@@ -8,12 +8,19 @@ export interface Auth{
 export interface ContextType{
     token:string,
     setToken:(token:string)=>void,
+    search:string,
+    setSearch:(value:string)=>void,
 }
 
 export interface PostType{
     id:string,
     title:string,
-    body:string
+    body:string,
+    author:{
+        name:string,
+        email:string,
+        
+    }
 }
 
 export interface createPostType{

@@ -2,6 +2,7 @@
 import { redirect, type ActionFunctionArgs } from "react-router";
 import { createPost, updatePost } from "../utils/post";
 import { useAuth } from "../context/AuthContext";
+import { registerApi } from "../utils/auth";
 
 
 export const createNewPost= async({request}:ActionFunctionArgs)=>{
@@ -41,3 +42,25 @@ return redirect("/");
 }
 redirect(`/posts/${id}`);
 }
+
+
+// export const register= async ({request}:ActionFunctionArgs)=>{
+  
+//   const formData=request.formData();
+//   const name= (await formData).get("name") as string;
+//   const email= (await formData).get("email") as string;
+//   const password= (await formData).get("password") as string;
+//   const password_confirmation =(await formData).get("password_confirmation") as string;
+   
+
+//   console.log(name,email,password,password_confirmation);
+
+//    const dec= await registerApi({name,email,password,password_confirmation})
+
+//    if(dec){
+//     return redirect("/");
+//    }
+
+//    return redirect("/register");
+   
+// }

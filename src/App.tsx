@@ -7,9 +7,10 @@ import { login, logout } from './utils/auth'
 import { AuthProvider } from './context/AuthContext'
 import Login from './pages/auth/Login'
 import NewPost from './pages/NewPost'
-import { createNewPost, editPost } from './Actions/formactions'
+import { createNewPost, editPost, register } from './Actions/formactions'
 import DetailPost from './pages/DetailPost'
 import { detailPost } from './Loaders/postloaders'
+import Register from './pages/auth/Register'
 
 
 const App = () => {
@@ -38,6 +39,12 @@ const App = () => {
         element:<DetailPost/>,
         loader:detailPost,
         action:editPost
+      },
+       {
+        path:"/register",
+        element:<Register/>,
+        
+        action:register
       }
       ]
     }

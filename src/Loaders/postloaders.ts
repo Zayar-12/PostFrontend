@@ -1,5 +1,5 @@
 import { redirect, type LoaderFunctionArgs } from "react-router";
-import { getPost } from "../utils/post";
+import { getAllPost, getPost } from "../utils/post";
 
 export const detailPost= async({params}:LoaderFunctionArgs)=>{
 

@@ -10,9 +10,9 @@ const AuthContext=createContext<ContextType | undefined>(undefined);
  export const AuthProvider=({children}:{children:React.ReactNode})=>{
 
     const[token,setToken]=useState<string>(localStorage.getItem('token') || "");
-
+    const [search,setSearch]=useState<string>("");
     return (
-       <AuthContext.Provider value={{ token, setToken }}>
+       <AuthContext.Provider value={{ token, setToken,search ,setSearch }}>
       {children}
     </AuthContext.Provider>
     )

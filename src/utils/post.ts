@@ -13,7 +13,9 @@ try {
         })
 
         if(res){
+            console.log(res.data.data)
             return res.data.data;
+            
         }
 
         return []
